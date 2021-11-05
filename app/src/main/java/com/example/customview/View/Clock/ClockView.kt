@@ -68,10 +68,9 @@ class ClockView @JvmOverloads constructor(
         with(mBlackPaint) {
             color = Color.BLACK
             strokeWidth = 4f
-            isAntiAlias = true // lam min
+            isAntiAlias = true
             style = Paint.Style.STROKE
         }
-        //Used for drawing surface center
         mBlackPaint2 = Paint()
         with(mBlackPaint2) {
             color = Color.BLACK
@@ -150,11 +149,19 @@ class ClockView @JvmOverloads constructor(
     }
 
     private fun drawTimeText(canvas: Canvas?) {
-        val textR = (measuredWidth / 2 - 45).toFloat() // radius of circle formed by text
+        val textR = (measuredWidth / 2 - 55).toFloat() // radius of circle formed by text
         for (i in 0..11) {  //Draw text of hours
-            val startX = (measuredWidth / 2 + textR * sin(Math.PI / 6 * i) - mTextPaint.measureText(textArray[i]) / 2).toFloat()
-            val startY = (measuredHeight / 2 - textR * cos(Math.PI / 6 * i) + mTextPaint.measureText(textArray[i]) / 2).toFloat()
+            var startX = (measuredWidth / 2 + textR * sin(Math.PI / 6 * i) - mTextPaint.measureText(textArray[i]) / 2).toFloat()
+            var startY = (measuredHeight / 2 - textR * cos(Math.PI / 6 * i) + mTextPaint.measureText(textArray[i]) / 2).toFloat()
+            canvas?.save()// Rotate text base on time
             canvas?.drawText(textArray[i], startX, startY, mTextPaint)
+            startX = measuredWidth/2.toFloat()
+            startY = measuredHeight/2.toFloat()
+            var displayHour= hour!! + minute!!.toFloat()/60
+            canvas?.rotate(15f * (displayHour), startX, startY)
+//            canvas?.drawText("Rotate base on time:",startX,startY,mRedPaint)
+            canvas?.drawText("Rotate base on time:$hour:$minute:$second",startX,startY,mTextPaint)
+            canvas?.restore()
         }
     }
 
@@ -182,7 +189,6 @@ class ClockView @JvmOverloads constructor(
                 measuredHeight / 2.toFloat()
             )
         }
-        //Restore the original state
         canvas?.restore()
     }
 

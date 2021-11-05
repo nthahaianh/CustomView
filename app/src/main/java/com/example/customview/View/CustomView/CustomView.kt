@@ -71,7 +71,7 @@ class CustomView @JvmOverloads constructor(
         mColor = color
         editText.setTextColor(mColor)
         viewColor.setBackgroundColor(mColor)
-        invalidate()
+//        invalidate()
     }
 
     fun getColor():Int{

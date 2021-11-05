@@ -10,7 +10,7 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_margin="5dp"
-        android:background="@color/pink"/>
+        android:background="@color/pink" />
 
     <EditText
         android:id="@+id/cv_edit_text"
