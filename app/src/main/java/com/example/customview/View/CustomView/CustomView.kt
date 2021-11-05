@@ -48,7 +48,7 @@ class CustomView @JvmOverloads constructor(
                 recycle()
             }
         }
-//        setViewColor()
+        setViewColor()
     }
 
     private fun setViewColor() {
@@ -61,16 +61,17 @@ class CustomView @JvmOverloads constructor(
         val dialog = AmbilWarnaDialog(context, mColor, object : OnAmbilWarnaListener {
             override fun onCancel(dialog: AmbilWarnaDialog) {}
             override fun onOk(dialog: AmbilWarnaDialog, color: Int) {
-                setColor(mColor)
+                setColor(color)
             }
         })
         dialog.show()
     }
 
     fun setColor(color:Int){
-        mColor =  color
+        mColor = color
         editText.setTextColor(mColor)
         viewColor.setBackgroundColor(mColor)
+        invalidate()
     }
 
     fun getColor():Int{

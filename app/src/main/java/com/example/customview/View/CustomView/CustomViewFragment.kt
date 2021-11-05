@@ -28,24 +28,6 @@ class CustomViewFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         customViewModel = ViewModelProviders.of(this).get(CustomViewModel::class.java)
-        customViewModel!!.color.value = frg_cv2.getColor()
-        customViewModel!!.color.observe(viewLifecycleOwner, Observer {
-            frg_cv1.setColor(it)
-            frg_cv2.setColor(it)
-            frg_cv3.setColor(it)
-        })
-        frg_cv2.setOnClickListener {
-            showDialog()
-        }
     }
 
-    private fun showDialog() {
-        val dialog = AmbilWarnaDialog(context, frg_cv2.getColor(), object : AmbilWarnaDialog.OnAmbilWarnaListener {
-            override fun onCancel(dialog: AmbilWarnaDialog) {}
-            override fun onOk(dialog: AmbilWarnaDialog, color: Int) {
-                customViewModel!!.color.value = color
-            }
-        })
-        dialog.show()
-    }
 }

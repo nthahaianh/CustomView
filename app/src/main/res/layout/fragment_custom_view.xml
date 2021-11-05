@@ -6,17 +6,6 @@
     android:background="@color/green">
 
     <com.example.customview.View.CustomView.CustomView
-        android:id="@+id/frg_cv1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="22dp"
-        app:layout_constraintBottom_toTopOf="@id/frg_cv2"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:text_color="@color/pink" />
-
-    <com.example.customview.View.CustomView.CustomView
         android:id="@+id/frg_cv2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,15 +16,4 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:text_color="@color/blue" />
-
-    <com.example.customview.View.CustomView.CustomView
-        android:id="@+id/frg_cv3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="22dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/frg_cv2"
-        app:text_color="@color/black" />
 </androidx.constraintlayout.widget.ConstraintLayout>

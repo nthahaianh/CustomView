@@ -99,18 +99,13 @@ class ClockView @JvmOverloads constructor(
             mcanvas = canvas
         }
         setCurrentTime()
-
-        drawOuterCircle(canvas) //Draw the outermost circle first
-
+        drawOuterCircle(canvas)
         if (isDrawScale) {
             drawTimeScale(canvas) //Draw scale
         }
-
+        drawHand(canvas)
+        drawCenter(canvas) //Draw center
         drawTimeText(canvas) //Draw text
-
-        drawHand(canvas) //Draw the needle
-
-        drawCenter(canvas) //Draw epicenter
     }
 
     private fun setCurrentTime() {
@@ -166,7 +161,6 @@ class ClockView @JvmOverloads constructor(
     private fun drawTimeScale(canvas: Canvas?) {
         var scaleLength: Float?
         canvas?.save()
-        //0.. 59 for [0,59]
         for (i in 0..59) {
             if (i % 5 == 0) {   //Large scale
                 mBlackPaint.strokeWidth = 5f
