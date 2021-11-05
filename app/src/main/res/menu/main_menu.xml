@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/item_menu_clock"
+        android:title="@string/clock" />
+    <item
+        android:id="@+id/item_menu_lock_pattern"
+        android:title="@string/lock_pattern" />
+    <item
+        android:id="@+id/item_menu_custom_view"
+        android:title="@string/custom_view" />
+    <item
+        android:id="@+id/item_menu_animation"
+        android:title="@string/animation" />
+</menu>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">CustomView</string>
+    <string name="clock">Clock</string>
+    <string name="lock_pattern">Lock Pattern</string>
+    <string name="custom_view">Custom View</string>
+    <string name="animation">Animation</string>
+    <string name="change">Change</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+</resources>
